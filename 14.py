@@ -22,7 +22,7 @@ import time
 
 def chain(cache ,n):
     if not cache.get(n, 0):
-        if n % 2 :
+        if n&1 :
             cache[n] = 1 + chain(cache, 3*n +1)
         else:
             cache[n] = 1 + chain(cache, n/2)
