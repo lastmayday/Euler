@@ -19,13 +19,10 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 
 import time
 
-def isodd(num):
-    return bool(num&1)
-
 
 def chain(cache ,n):
     if not cache.get(n, 0):
-        if isodd(n):
+        if n % 2 :
             cache[n] = 1 + chain(cache, 3*n +1)
         else:
             cache[n] = 1 + chain(cache, n/2)
