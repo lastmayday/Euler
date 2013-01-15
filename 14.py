@@ -19,7 +19,6 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 
 import time
 
-
 def chain(cache ,n):
     if not cache.get(n, 0):
         if n&1 :
