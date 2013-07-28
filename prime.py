@@ -60,3 +60,12 @@ def factor(n):
         F.append((p, e))
     F.sort()
     return F
+
+
+def prime_list(n):
+    """Return a list of primes < n"""
+    sieve = [True] * n
+    for i in xrange(3, int(n**0.5)+1, 2):
+        if sieve[i]:
+            sieve[i*i::i*2] = [False] * ((n-i*i-1)/(2*i)+1)
+    return [2] + [i for i in xrange(3, n, 2) if sieve[i]]
